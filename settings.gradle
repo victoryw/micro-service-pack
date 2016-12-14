@@ -17,3 +17,5 @@ include 'services:webservice'
 */
 
 rootProject.name = 'sprine-boot-pact'
+include 'provider'
+include 'consumer'
