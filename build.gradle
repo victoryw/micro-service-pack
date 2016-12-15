@@ -11,9 +11,10 @@ allprojects {
     }
 }
 
+
 buildscript {
     ext {
-        springBootVersion = '1.2.3.RELEASE'
+        springBootVersion = '1.4.2.RELEASE'
     }
     repositories {
         mavenLocal()
@@ -26,22 +27,15 @@ buildscript {
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
     repositories {
-        mavenLocal()
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-
-        // Start: JUnit
-        testCompile('org.springframework.boot:spring-boot-starter-test') {
-            exclude module: 'commons-logging'
-        }
-        // End: JUnit
 
         // Start: Spring Boot Web
         compile('org.springframework.boot:spring-boot-starter-web')
@@ -50,5 +44,17 @@ subprojects {
         // Start: Spring Boot Actuator
         compile 'org.springframework.boot:spring-boot-starter-actuator'
         // End: Spring Boot Actuator
+
+        //Start: Pact
+        testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:2.1.13'
+        //End: Pact
+
+
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+
+        // Start: JUnit
+        testCompile 'junit:junit:4.12'
+
+        // End: JUnit
     }
 }
