@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ConsumerMain {
 
     @RequestMapping("/")
-    public @ResponseBody String Hello(){
+    public final @ResponseBody String hello() {
         return "Hello World";
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         SpringApplication.run(ConsumerMain.class, args);
     }
 

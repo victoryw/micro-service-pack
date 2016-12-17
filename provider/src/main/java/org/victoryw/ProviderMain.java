@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProviderMain {
+public final class ProviderMain {
+    private ProviderMain() {
+    }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(final String[] args) throws Exception {
         SpringApplication.run(ProviderMain.class, args);
     }
 
