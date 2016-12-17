@@ -6,6 +6,7 @@ allprojects {
     apply plugin: 'eclipse'
     apply plugin: 'idea'
     apply plugin: 'checkstyle'
+    apply plugin: 'jacoco'
 
     task wrapper(type: Wrapper) {
         gradleVersion = '2.12'
@@ -15,6 +16,15 @@ allprojects {
     	configFile = rootProject.file('checkstyle.xml')
         toolVersion ="7.0"
     }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+
+        maven { url "http://repo1.maven.org/maven2/" }
+    }
+
 }
 
 
@@ -22,10 +32,15 @@ buildscript {
     ext {
         springBootVersion = '1.4.2.RELEASE'
     }
+
     repositories {
         mavenLocal()
         mavenCentral()
+        jcenter()
+
+        maven { url "http://repo1.maven.org/maven2/" }
     }
+
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -63,4 +78,23 @@ subprojects {
 
         // End: JUnit
     }
+}
+
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
 }

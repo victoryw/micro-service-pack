@@ -99,3 +99,6 @@ modules.xml
 *.ipr
 
 .idea
+
+### Jacoco ###
+build/
