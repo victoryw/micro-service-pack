@@ -13,7 +13,7 @@ allprojects {
 
     checkstyle {
     	configFile = rootProject.file('checkstyle.xml')
-        toolVersion ="7.3"
+        toolVersion ="7.0"
     }
 }
 
