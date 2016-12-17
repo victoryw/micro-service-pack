@@ -23,7 +23,7 @@ public class ConsumerMainTest {
     private MockMvc mockMvc;
 
     @Test
-    public  void shouldReturnHelloWorldWhenRequest() throws Exception {
+    public final void shouldReturnHelloWorldWhenRequest() throws Exception {
         this.mockMvc.perform(get("/")).
                 andExpect(status().isOk());
     }
