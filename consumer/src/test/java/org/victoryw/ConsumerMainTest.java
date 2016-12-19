@@ -19,6 +19,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 /**
  * Created by victoryw on 12/16/16.
  */
@@ -38,7 +39,7 @@ public class ConsumerMainTest {
 
 
     @Before
-    public void setUp() {
+    public final void setUp() {
         mockServer = MockRestServiceServer.createServer(restTemplate);
     }
 
@@ -52,7 +53,9 @@ public class ConsumerMainTest {
     public final void shouldReturnHelloParamsWhenRequest() throws Exception {
         mockServer.expect(requestTo("http://provider.com/hello/wy"))
                 .andExpect(method(GET))
-                .andRespond(withSuccess("{\"result\":\"wy\"}", MediaType.APPLICATION_JSON));
+                .andRespond(withSuccess(
+                        "{\"result\":\"wy\"}",
+                        MediaType.APPLICATION_JSON));
 
         this.mockMvc.perform(get("/hello/wy"))
                 .andExpect(status().isOk())

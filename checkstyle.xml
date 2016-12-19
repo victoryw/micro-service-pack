@@ -60,6 +60,9 @@
        <property name="message" value="Line has trailing spaces."/>
     </module>
 
+    <module name="SuppressionCommentFilter">
+    </module>
+
     <!-- Checks for Headers                                -->
     <!-- See http://checkstyle.sf.net/config_header.html   -->
     <!-- <module name="Header"> -->
@@ -160,6 +163,7 @@
         <module name="FinalParameters"/>
         <module name="TodoComment"/>
         <module name="UpperEll"/>
+        <module name="FileContentsHolder"/>
 
     </module>
 

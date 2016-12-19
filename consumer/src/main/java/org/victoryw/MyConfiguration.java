@@ -6,9 +6,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class MyConfiguration {
-
+    //CHECKSTYLE:OFF
     @Bean
-    RestTemplate restTemplate() {
+    public RestTemplate restTemplate() {
+        //CHECKSTYLE:ON
         return new RestTemplate();
     }
+
+
 }

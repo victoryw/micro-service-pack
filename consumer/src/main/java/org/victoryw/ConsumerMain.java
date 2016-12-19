@@ -17,19 +17,23 @@ public class ConsumerMain {
     private RestTemplate restTemplate;
 
     @RequestMapping("/")
-    public final @ResponseBody String hello() {
+    public final
+    @ResponseBody
+    String hello() {
         return "Hello World";
     }
 
 
     @RequestMapping("/hello/{username}")
-    public final @ResponseBody ProviderResult helloProvider(@PathVariable String username) {
-        try{
-            ProviderResult result = restTemplate.getForObject("http://provider.com/hello/"+username,
-                    ProviderResult.class);
+    public final
+    @ResponseBody
+    ProviderResult helloProvider(@PathVariable final String username) {
+        try {
+            String url = "http://provider.com/hello/" + username;
+            ProviderResult result =
+                    restTemplate.getForObject(url, ProviderResult.class);
             return result;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
