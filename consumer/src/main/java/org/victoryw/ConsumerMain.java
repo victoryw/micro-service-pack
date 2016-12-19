@@ -28,14 +28,10 @@ public class ConsumerMain {
     public final
     @ResponseBody
     ProviderResult helloProvider(@PathVariable final String username) {
-        try {
-            String url = "http://provider.com/hello/" + username;
-            ProviderResult result =
-                    restTemplate.getForObject(url, ProviderResult.class);
-            return result;
-        } catch (Exception e) {
-            throw e;
-        }
+        String url = "http://provider.com/hello/" + username;
+        ProviderResult result =
+                restTemplate.getForObject(url, ProviderResult.class);
+        return result;
     }
 
     public static void main(final String[] args) throws Exception {
