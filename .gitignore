@@ -2,7 +2,7 @@
 
 ### Gradle ###
 .gradle
-*/build/
+*/build/**/*
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -102,3 +102,6 @@ modules.xml
 
 ### Jacoco ###
 build/
+
+##Pact##
+consumer/target/
