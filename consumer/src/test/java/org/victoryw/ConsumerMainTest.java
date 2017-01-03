@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.web.client.RestTemplate;
 
 import static org.springframework.http.HttpMethod.GET;
@@ -57,9 +58,12 @@ public class ConsumerMainTest {
                         "{\"result\":\"wy\"}",
                         MediaType.APPLICATION_JSON));
 
-        this.mockMvc.perform(get("/hello/wy"))
+        ResultActions resultActions = this.mockMvc.perform(get("/hello/wy"));
+
+        resultActions
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'result':'wy'}"));
+
         mockServer.verify();
     }
 }
