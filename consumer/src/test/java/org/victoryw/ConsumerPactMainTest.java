@@ -9,7 +9,6 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.ContextConfiguration;
@@ -29,8 +28,6 @@ import java.util.Map;
         loader = AnnotationConfigContextLoader.class)
 public class ConsumerPactMainTest {
     private final int successStatus = 200;
-    @Autowired
-    private RestTemplate restTemplate;
 
     private final int port = 8080;
     @Rule
@@ -59,7 +56,7 @@ public class ConsumerPactMainTest {
     @Test
     @PactVerification("test_provider")
     public final void shouldReturnHelloParamsWhenRequest() throws Exception {
-        restTemplate = new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
         String url = "http://127.0.0.1:8080/hello/wy";
 
         ParameterizedTypeReference<ProviderResult> responseType;
