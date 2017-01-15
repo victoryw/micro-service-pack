@@ -67,15 +67,13 @@ subprojects {
         // End: Spring Boot Actuator
 
         //Start: Pact
-	testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.0-beta.2'
+	    testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.0-beta.2'
         //End: Pact
-
 
         testCompile("org.springframework.boot:spring-boot-starter-test")
 
         // Start: JUnit
         testCompile 'junit:junit:4.12'
-
         // End: JUnit
         
         testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.0-beta.2'

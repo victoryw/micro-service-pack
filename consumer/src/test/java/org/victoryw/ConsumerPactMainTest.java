@@ -61,6 +61,7 @@ public class ConsumerPactMainTest {
 
         ParameterizedTypeReference<ProviderResult> responseType;
         responseType = new ParameterizedTypeReference<ProviderResult>() {
+
         };
         ProviderResult body = restTemplate
                 .exchange(url, HttpMethod.GET, null, responseType)
