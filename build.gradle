@@ -21,8 +21,6 @@ allprojects {
         mavenLocal()
         mavenCentral()
         jcenter()
-
-        maven { url "http://repo1.maven.org/maven2/" }
     }
 
 }
@@ -37,8 +35,6 @@ buildscript {
         mavenLocal()
         mavenCentral()
         jcenter()
-
-        maven { url "http://repo1.maven.org/maven2/" }
     }
 
     dependencies {
@@ -68,6 +64,8 @@ subprojects {
 
         //Start: Pact
 	    testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.0-beta.2'
+        testCompile 'au.com.dius:pact-jvm-provider-junit_2.11:3.5.0-beta.2'
+        testCompile 'com.github.rest-driver:rest-client-driver:1.1.45'
         //End: Pact
 
         testCompile("org.springframework.boot:spring-boot-starter-test")
@@ -75,8 +73,8 @@ subprojects {
         // Start: JUnit
         testCompile 'junit:junit:4.12'
         // End: JUnit
-        
-        testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.5.0-beta.2'
+
+
     }
 }
 

@@ -22,7 +22,6 @@ import java.util.Map;
 /**
  * Created by victoryw on 12/21/16.
  */
-
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = MyConfiguration.class,
         loader = AnnotationConfigContextLoader.class)
