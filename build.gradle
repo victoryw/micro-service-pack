@@ -1,7 +1,7 @@
 // In this section you declare where to find the dependencies of your project
 allprojects {
     group = 'org.victoryw'
-    version = '0.0.1-SNAPSHOT'
+    version = '0.1.0'
 
     apply plugin: 'eclipse'
     apply plugin: 'idea'
@@ -42,9 +42,11 @@ buildscript {
     }
 }
 
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
+    apply plugin: 'application'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -75,6 +77,10 @@ subprojects {
 
 
     }
+}
+
+project(':consumer') {
+    mainClassName = 'org.victoryw.ConsumerMain'
 }
 
 task codeCoverageReport(type: JacocoReport) {
