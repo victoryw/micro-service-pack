@@ -13,16 +13,40 @@ import javax.persistence.Id;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
-    public String firstName;
-    public String lastName;
+    private Long id;
+    private String firstName;
+    private String lastName;
 
     protected Customer() {
 
     }
 
     public Customer(final String firstName, final String lastName) {
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+    }
+
+    public final Long getId() {
+        return id;
+    }
+
+    public final void setId(final Long id) {
+        this.id = id;
+    }
+
+    public final String getFirstName() {
+        return firstName;
+    }
+
+    public final void setFirstName(final String firstName) {
         this.firstName = firstName;
+    }
+
+    public final String getLastName() {
+        return lastName;
+    }
+
+    public final void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 }
