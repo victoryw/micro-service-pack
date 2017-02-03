@@ -22,11 +22,13 @@ spring:
 spring:
   profiles: prod
   datasource:
-    url : jdbc:mysql://mysql:3306/db_example
+    url : jdbc:mysql://mysql/db_example
     username : springuser
     password : r0ys1ngh4m
 
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto : create
+      ddl-auto : none
+      dialect  : org.hibernate.dialect.MySQL5InnoDBDialect
 
