@@ -59,10 +59,7 @@ subprojects {
         // Start: Spring Boot Web
         compile('org.springframework.boot:spring-boot-starter-web')
         // End: Spring Boot Web
-
-        // Start: Spring Boot Actuator
-        compile 'org.springframework.boot:spring-boot-starter-actuator'
-        // End: Spring Boot Actuator
+        
 
         //Start: Spring data jpa and H2 memory db
         compile("org.springframework.boot:spring-boot-starter-data-jpa")
