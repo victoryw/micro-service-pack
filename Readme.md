@@ -3,4 +3,3 @@
 [![Code Climate](https://codeclimate.com/github/victoryw/micro-service-pack/badges/gpa.svg)](https://codeclimate.com/github/victoryw/micro-service-pack)
 [![codecov](https://codecov.io/gh/victoryw/micro-service-pack/branch/master/graph/badge.svg)](https://codecov.io/gh/victoryw/micro-service-pack)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ad0518ea80754152831802018e7af841)](https://www.codacy.com/app/tianya-wy/micro-service-pack?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=victoryw/micro-service-pack&amp;utm_campaign=badger)
-[![Build Status](https://app.snap-ci.com/victoryw/micro-service-pack/branch/master/build_image)](https://app.snap-ci.com/victoryw/micro-service-pack/branch/master)
